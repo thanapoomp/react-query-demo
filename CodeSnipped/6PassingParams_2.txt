@@ -1,0 +1,23 @@
+import React from "react";
+import * as titleApi from "../modules/Title/api/titleApi";
+function Test() {
+  const [titleId, setTitleId] = React.useState(null);
+
+  const selectedTitle = titleApi.useGetById(titleId);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setTitleId("fc120d00-1e89-449f-9784-993fc05a7cf4");
+        }}
+      >
+        get
+      </button>
+      {selectedTitle.isLoading && <p>loading..</p>}
+      <p>{selectedTitle.data?.name}</p>
+    </div>
+  );
+}
+
+export default Test;

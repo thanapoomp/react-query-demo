@@ -1,0 +1,36 @@
+import React from "react";
+import { useQuery } from "react-query";
+import axios from "axios";
+function Test() {
+    
+  const getTitles = () => {
+    return axios
+      .get("https://demo3.devsiamsmile.com/api/Titles")
+      .then((res) => {
+        if (res.data.isSuccess) {
+          return res.data.data;
+        } else {
+          throw Error(res.data.message);
+        }
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
+  const { data, isLoading, status, isError, error } = useQuery(
+    "titleQuery",
+    () => getTitles()
+  );
+
+  return (
+    <div>
+      {status}
+      {isError && <p>{error.message}</p>}
+      {isLoading && <p>Loading...</p>}
+      {data && <p>{JSON.stringify(data)}</p>}
+    </div>
+  );
+}
+
+export default Test;

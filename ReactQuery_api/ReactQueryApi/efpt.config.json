@@ -1,0 +1,53 @@
+﻿{
+   "ContextClassName": "ReactQueryContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "ReactQueryApi",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[auth].[Role]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[auth].[User]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[auth].[UserRole]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Contact]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Product]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProductGroup]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Title]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}

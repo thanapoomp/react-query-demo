@@ -1,0 +1,38 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  smileshopv3:
+    image: smileshopv3
+    build:
+      context: .
+      dockerfile: SmileShopV3/Dockerfile
+    ports:
+      - 5001:5000
+    depends_on:
+      - smileshopv3db
+    volumes:
+      - smileshopv3_v:/app/
+      - smileshopv3_key_v:/root/.aspnet/DataProtection-Keys
+    environment:
+      "ConnectionStrings:DefaultConnection": "Data Source=smileshopv3db;Initial Catalog=SmileShopV3;User Id=sa;Password=ThisIsDBPass1;"
+
+  smileshopv3db:
+    container_name: smileshopv3db
+    image: mcr.microsoft.com/mssql/server:2019-CU11-ubuntu-20.04
+    environment:
+      SA_PASSWORD: "ThisIsDBPass1"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1434:1433
+    volumes: 
+      - smileshopv3db_v:/var/opt/mssql/
+
+volumes:
+  smileshopv3_v:
+    external: true
+  smileshopv3_key_v:
+    external: true
+  smileshopv3db_v:
+    external: true

@@ -1,0 +1,26 @@
+//create
+const create = (payload) => {
+  return axios
+    .post(`${apiUrl}/create`, payload)
+    .then((res) => {
+      if (res.data.isSuccess) {
+        return res.data.data;
+      } else {
+        throw Error(res.data.message);
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const useCreate = (
+  payload,
+) => {
+  const queryClient = useQueryClient();
+  return useMutation((payload) => create(payload), {
+    onSuccess: (data) => {
+      queryClient.refetchQueries([allQueryName]);
+    },
+  });
+};

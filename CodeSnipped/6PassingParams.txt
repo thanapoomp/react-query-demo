@@ -1,0 +1,19 @@
+//get by id
+const getById = (id) => {
+  return axios
+    .get(`${apiUrl}/${id}`)
+    .then((res) => {
+      if (res.data.isSuccess) {
+        return res.data.data;
+      } else {
+        throw Error(res.data.message);
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const useGetById = (id) => {
+  return useQuery([singleQueryName, id], () => getById(id), {enabled: Boolean(id)});
+};

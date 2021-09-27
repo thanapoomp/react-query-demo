@@ -1,0 +1,35 @@
+import React from "react";
+import * as titleApi from "../modules/Title/api/titleApi";
+function Test() {
+  const titleList = titleApi.useGetAll();
+  const titleCreate = titleApi.useCreate(null);
+
+  const randomName = (length) => {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+
+  return (
+    <div>
+      {titleList.isLoading && <p>loading..</p>}
+      <p>{titleList.data && JSON.stringify(titleList)}</p>
+
+      <button
+        onClick={() => {
+          let payload = { name: randomName(10) };
+          titleCreate.mutate(payload);
+        }}
+      >
+        add
+      </button>
+    </div>
+  );
+}
+
+export default Test;

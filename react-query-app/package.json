@@ -1,0 +1,66 @@
+{
+  "name": "sso-auth",
+  "version": "0.3.0",
+  "private": true,
+  "homepage": "https://site2.thanapoom.cc",
+  "dependencies": {
+    "@date-io/dayjs": "^1.3.13",
+    "@manaflair/redux-batch": "^1.0.0",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@material-ui/pickers": "^3.3.10",
+    "@reduxjs/toolkit": "^1.5.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.6",
+    "flat": "^5.0.2",
+    "formik": "^2.2.9",
+    "js-file-download": "^0.4.12",
+    "jwt-decode": "^3.1.2",
+    "material-ui-dropzone": "^3.5.0",
+    "mui-datatables": "^3.7.7",
+    "pdfmake": "^0.2.0",
+    "qrcode.react": "^1.0.1",
+    "react": "^16.14.0",
+    "react-apexcharts": "^1.3.9",
+    "react-barcode": "^1.4.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
+    "react-number-format": "^4.6.4",
+    "react-qr-reader": "^2.2.1",
+    "react-query": "^3.24.4",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-text-mask": "^5.4.3",
+    "react-to-print": "^2.12.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "sweetalert2": "^11.0.18",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

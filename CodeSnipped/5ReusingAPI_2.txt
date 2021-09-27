@@ -1,0 +1,14 @@
+import React from "react";
+import * as titleApi from "../modules/Title/api/titleApi";
+function Test() {
+  const titleList = titleApi.useGetAll();
+
+  return (
+    <div>
+      {titleList.isLoading && <p>loading..</p>}
+      <p>{titleList.data && JSON.stringify(titleList)}</p>
+    </div>
+  );
+}
+
+export default Test;

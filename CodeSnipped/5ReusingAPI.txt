@@ -1,0 +1,25 @@
+import axios from "axios";
+import { useQuery } from "react-query";
+import * as CONST from "../../../../Constant";
+const apiUrl = `${CONST.API_URL}/titles`;
+const allQueryName = "titleList";
+
+//get all
+const getAll = () => {
+  return axios
+    .get(apiUrl)
+    .then((res) => {
+      if (res.data.isSuccess) {
+        return res.data.data;
+      } else {
+        throw Error(res.data.message);
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const useGetAll = () => {
+  return useQuery([allQueryName], () => getAll());
+};
