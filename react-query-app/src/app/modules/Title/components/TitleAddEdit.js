@@ -18,6 +18,7 @@ export default function TitleAddEdit() {
     if (reason !== "backdropClick") {
       formik.setSubmitting(false);
       formik.resetForm();
+      dispatch(titleRedux.actions.close());
     }
   };
 
@@ -37,7 +38,8 @@ export default function TitleAddEdit() {
     },
     onSubmit: (values) => {
       //submit ....
-      console.log(JSON.stringify(values));
+      alert(JSON.stringify(values));
+      handleClose();
     },
   });
 
